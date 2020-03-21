@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.carryonde.MainController;
 import com.example.carryonde.R;
@@ -15,6 +14,8 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        MainController.getInstance().safeConfig();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
@@ -28,10 +29,10 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.buttonHelper:
-                MainController.instance().makeUserHelper();
+                MainController.getInstance().makeUserHelper();
                 break;
             case R.id.buttonOrganisation:
-                MainController.instance().makeUserOrga();;
+                MainController.getInstance().makeUserOrga();;
                 break;
         }
 
