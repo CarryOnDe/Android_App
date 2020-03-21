@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+=======
+rootProject.name='CarryOnDe'
+>>>>>>> 2be2b062c5ed770a0b4bb306bd9fe353a1494f13
 include ':app'
