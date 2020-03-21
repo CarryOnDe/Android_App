@@ -2,16 +2,19 @@ package com.example.carryonde;
 
 public class MainController {
     private boolean isHelper;
-    private MainController instance;
+    private static MainController instance;
+    private boolean firstStart = true;
     private MainController(){
 
     }
 
-    public MainController getMainController(){
-        if(this.instance == null) {
-            this.instance = new MainController();
+    public static MainController instance(){
+        if(instance == null) {
+            // Persistente Attribute aus Datei ziehen
+            // firstStart ggf. setzen
+            instance = new MainController();
         }
-        return this.instance;
+        return instance;
     }
 
     public boolean userIsHelper(){
@@ -23,5 +26,9 @@ public class MainController {
 
     public void makeUserOrga(){
         this.isHelper = false;
+    }
+
+    public boolean firstStart(){
+        return this.firstStart;
     }
 }

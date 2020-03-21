@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.carryonde.MainController;
 import com.example.carryonde.R;
 
 public class WelcomeActivity extends Activity implements View.OnClickListener {
@@ -27,8 +28,11 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.buttonHelper:
+                MainController.instance().makeUserHelper();
                 break;
-                //MainController.ins
+            case R.id.buttonOrganisation:
+                MainController.instance().makeUserOrga();;
+                break;
         }
 
 
